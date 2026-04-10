@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i18n 测试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .test-item {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 5px;
+        }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>i18n 翻译测试</h1>
+    <div id="results"></div>
+    
+    <script>
+        // 测试 localStorage
+        const storedLang = localStorage.getItem('language');
+        const results = document.getElementById('results');
+        
+        function addResult(label, value, isCorrect) {
+            const div = document.createElement('div');
+            div.className = 'test-item ' + (isCorrect ? 'success' : 'error');
+            div.innerHTML = `<strong>${label}:</strong> ${value}`;
+            results.appendChild(div);
+        }
+        
+        // 显示 localStorage 中的语言
+        addResult('localStorage 中的 language', storedLang || '未设置', storedLang === 'zh');
+        
+        // 测试中文翻译文件
+        const zhTranslations = {
+            'home.hero.title1': '智能',
+            'home.hero.title2': '舌诊',
+            'home.hero.title3': '革命'
+        };
+        
+        addResult('期望的翻译', JSON.stringify(zhTranslations), true);
+        
+        // 提示信息
+        const info = document.createElement('div');
+        info.className = 'test-item';
+        info.innerHTML = `
+            <p><strong>请按以下步骤操作：</strong></p>
+            <ol>
+                <li>打开浏览器开发者工具（F12）</li>
+                <li>在 Console 中输入：<code>localStorage.setItem('language', 'zh')</code></li>
+                <li>刷新页面</li>
+                <li>如果仍然看到翻译键值，请清除所有浏览器数据</li>
+            </ol>
+        `;
+        results.appendChild(info);
+    </script>
+</body>
+</html>

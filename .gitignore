@@ -1,0 +1,86 @@
+# Python
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/dist_electron/
+frontend/.env.local
+frontend/public/fontawesome-free-7.1.0-web/
+frontend/src/assets/*.png
+frontend/src/assets/*.jpg
+frontend/src/assets/*.webp
+frontend/src/assets/*.ico
+frontend/public/static/*.jpg
+frontend/public/static/*.png
+frontend/public/static/*.webp
+frontend/public/*.ico
+
+# Dataset (太大，不适合 Git)
+TongueDiagnosis-master/dataset/*.jpg
+TongueDiagnosis-master/dataset/**/*.jpg
+TongueDiagnosis-master/dataset/*.png
+TongueDiagnosis-master/dataset/**/*.png
+TongueDiagnosis-master/dataset/*.csv
+TongueDiagnosis-master/dataset/train/
+TongueDiagnosis-master/dataset/val/
+TongueDiagnosis-master/dataset/test/
+
+# Model weights (使用 Git LFS 或外部存储)
+TongueDiagnosis-master/*.pth
+TongueDiagnosis-master/*.pt
+TongueDiagnosis-master/*.onnx
+TongueDiagnosis-master/*.h5
+TongueDiagnosis-master/checkpoints/
+TongueDiagnosis-master/application/net/weights/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+AppDatabase.db
+
+# Logs
+*.log
+logs/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+temp/
